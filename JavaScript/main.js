@@ -29,6 +29,12 @@ const allStarSigns = [
     , aquarius
     , pisces
 ];
-console.log(allStarSigns);
 
-let userStarSign = getUsersStarSign(['12', '08', '1994'], allStarSigns);
+let userBirthday = ['12', '08', '1994'];
+
+let userStarSign = getUsersStarSign(userBirthday, allStarSigns);
+
+console.log(`Your star sign is ${userStarSign.sign}, because your birthday is ${userBirthday[0]}-${userBirthday[1]}-${userBirthday[2]} and that cycle is between ${userStarSign.startDate} and ${userStarSign.endDate}.`)
+console.log(`You are going to have a ${randomArrayResult(variableArray.youAre)}`);
+console.log(`You should ${randomArrayResult(variableArray.youShould)}`);
+console.log(`Magic 8 Ball says: ${randomArrayResult(variableArray.magic8Ball)}`);
