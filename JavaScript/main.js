@@ -1,5 +1,6 @@
 import { StarSign } from "./modules/classes.js";
-import { getUsersStarSign } from "./modules/functions.js";
+import { getUsersStarSign, randomArrayResult } from "./modules/functions.js";
+import { variableArray } from "./modules/variables.js";
 
 const aries = new StarSign('Aries', ['21', '03'], ['19', '04']);
 const taurus = new StarSign('Taurus', ['20', '04'], ['20', '05']);
@@ -31,4 +32,3 @@ const allStarSigns = [
 console.log(allStarSigns);
 
 let userStarSign = getUsersStarSign(['12', '08', '1994'], allStarSigns);
-console.log(userStarSign);

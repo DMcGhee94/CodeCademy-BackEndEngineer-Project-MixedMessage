@@ -4,9 +4,13 @@ let getUsersStarSign = (userBirthDayArray, starSignsArray) => {
 
     let filterResult = starSignsArray.filter((starSign) => (userBirthDayDate >= starSign.startDate && userBirthDayDate <= starSign.endDate));
 
-    if (filterResult.length = 1) {
+    if (filterResult.length === 1) {
         return filterResult;
     }
 };
 
-export {getUsersStarSign};
+let randomArrayResult = inputArray => {
+    return inputArray[Math.floor(Math.random() * inputArray.length)];
+};
+
+export { getUsersStarSign, randomArrayResult };
