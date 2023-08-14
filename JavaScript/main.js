@@ -30,11 +30,45 @@ const allStarSigns = [
     , pisces
 ];
 
-let magic8BallButton = document.getElementById("magic-8-ball-button");
-let youAreButton = document.getElementById("you-are-button");
-let youShouldButton = document.getElementById("you-should-button");
+const magic8BallButton = document.getElementById("magic-8-ball-button");
+const youAreButton = document.getElementById("you-are-button");
+const youShouldButton = document.getElementById("you-should-button");
 
-magic8BallButton.onclick = randomArrayResult(variableArray.magic8Ball);
+const randomArrayButtons = [
+    [magic8BallButton, "magic-8-ball-output", variableArray.magic8Ball]
+    , [youAreButton, "you-are-output", variableArray.youAre]
+    , [youShouldButton, "you-should-output", variableArray.youShould]
+];
+
+magic8BallButton.onclick = function() {
+    let output = document.getElementById("magic-8-ball-output");
+    let result = randomArrayResult(variableArray.magic8Ball);
+
+    if (output.style.display === "none" || !output.style.display) {
+        output.style.display = "block";
+    };
+    output.innerHTML = result;
+};
+
+youAreButton.onclick = function() {
+    let output = document.getElementById("you-are-output");
+    let result = randomArrayResult(variableArray.youAre);
+
+    if (output.style.display === "none" || !output.style.display) {
+        output.style.display = "block";
+    };
+    output.innerHTML = `You are having a ${result}`;
+};
+
+youShouldButton.onclick = function() {
+    let output = document.getElementById("you-should-output");
+    let result = randomArrayResult(variableArray.youShould);
+
+    if (output.style.display === "none" || !output.style.display) {
+        output.style.display = "block";
+    };
+    output.innerHTML = `You should ${result}`;
+};
 
 /*
 let userBirthday = ['12', '08', '1994'];

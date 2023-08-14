@@ -11,7 +11,6 @@ let getUsersStarSign = (userBirthDayArray, starSignsArray) => {
 };
 
 let randomArrayResult = inputArray => {
-    console.log(inputArray[Math.floor(Math.random() * inputArray.length)]);
     return inputArray[Math.floor(Math.random() * inputArray.length)];
 };
 
