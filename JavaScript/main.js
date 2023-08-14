@@ -30,6 +30,13 @@ const allStarSigns = [
     , pisces
 ];
 
+let magic8BallButton = document.getElementById("magic-8-ball-button");
+let youAreButton = document.getElementById("you-are-button");
+let youShouldButton = document.getElementById("you-should-button");
+
+magic8BallButton.onclick = randomArrayResult(variableArray.magic8Ball);
+
+/*
 let userBirthday = ['12', '08', '1994'];
 
 let userStarSign = getUsersStarSign(userBirthday, allStarSigns);
@@ -38,3 +45,4 @@ console.log(`Your star sign is ${userStarSign.sign}, because your birthday is ${
 console.log(`You are going to have a ${randomArrayResult(variableArray.youAre)}`);
 console.log(`You should ${randomArrayResult(variableArray.youShould)}`);
 console.log(`Magic 8 Ball says: ${randomArrayResult(variableArray.magic8Ball)}`);
+*/
