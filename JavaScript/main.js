@@ -30,9 +30,25 @@ const allStarSigns = [
     , pisces
 ];
 
+const birthdayDatePicker = document.getElementById("horoscope-birthday");
 const magic8BallButton = document.getElementById("magic-8-ball-button");
 const youAreButton = document.getElementById("you-are-button");
 const youShouldButton = document.getElementById("you-should-button");
+
+birthdayDatePicker.onchange = function() {
+    let output = document.getElementById("horoscope-output");
+    let userBirthday = [birthdayDatePicker.value.split("-")[2], 
+                        birthdayDatePicker.value.split("-")[1], 
+                        birthdayDatePicker.value.split("-")[0]
+                    ];
+
+    let userStarSign = getUsersStarSign(userBirthday, allStarSigns);
+
+    if (output.style.display === "none" || !output.style.display) {
+        output.style.display = "block";
+    };
+    output.innerHTML = `Your star sign is ${userStarSign.sign}, because your birthday is ${userBirthday[0]}-${userBirthday[1]}-${userBirthday[2]} and that cycle is between ${userStarSign.startDate.toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"})} and ${userStarSign.endDate.toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"})}.`;
+};
 
 const randomArrayButtons = [
     [magic8BallButton, "magic-8-ball-output", variableArray.magic8Ball]
@@ -69,6 +85,8 @@ youShouldButton.onclick = function() {
     };
     output.innerHTML = `You should ${result}`;
 };
+
+
 
 /*
 let userBirthday = ['12', '08', '1994'];
